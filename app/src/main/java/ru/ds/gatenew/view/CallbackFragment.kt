@@ -1,4 +1,4 @@
-package ru.ds.gatenew
+package ru.ds.gatenew.view
 
 import android.content.Intent
 import android.net.Uri
@@ -7,14 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import ru.ds.gatenew.R
 import ru.ds.gatenew.databinding.FragmentCallbackBinding
+import ru.ds.gatenew.utils.Constant
 import java.lang.Thread.sleep
 import kotlin.system.exitProcess
 
-const val SH1_NUMBER = "89858892954"
-const val SH2_NUMBER = "89165465498"
-const val SH3_NUMBER = "89858896762"
-const val SH4_NUMBER = "89858896739"
+
 
 class CallbackFragment : Fragment(), View.OnClickListener {
 
@@ -46,20 +45,20 @@ class CallbackFragment : Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.btnSh1 -> {
-                makeCall(SH1_NUMBER) // call to gate
+                makeCall(Constant.SH1_NUMBER) // call to gate
                 closeApp() //close app
             }
 
             R.id.btnSh2 -> {
-                makeCall(SH2_NUMBER)
+                makeCall(Constant.SH2_NUMBER)
                 closeApp() //close app
             }
             R.id.btnSh3 -> {
-                makeCall(SH3_NUMBER)
+                makeCall(Constant.SH3_NUMBER)
                 closeApp() //close app
             }
             R.id.btnSh4 -> {
-                makeCall(SH4_NUMBER)
+                makeCall(Constant.SH4_NUMBER)
                 closeApp() //close app
             }
         }
@@ -68,7 +67,8 @@ class CallbackFragment : Fragment(), View.OnClickListener {
     private fun closeApp() {
         Thread {
             sleep(3000)
-            quitApp(binding.root)
+            this@CallbackFragment
+            exitProcess(0)
         }.start()
     }
 
@@ -79,12 +79,7 @@ class CallbackFragment : Fragment(), View.OnClickListener {
         startActivity(callIntent)
     }
 
-    private fun quitApp(view: View) {
-        this@CallbackFragment
-        exitProcess(0)
-    }
-
-    override fun onDestroy() {
+       override fun onDestroy() {
         super.onDestroy()
         _binding = null
     }
