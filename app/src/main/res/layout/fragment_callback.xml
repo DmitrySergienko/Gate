@@ -48,31 +48,31 @@
                 android:id="@+id/btnSh1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="45dp"
-                android:layout_marginBottom="25dp"
+                android:layout_marginRight="@dimen/layout_button_margin_right"
+                android:layout_marginBottom="@dimen/layout_marginBottom"
                 android:text="@string/SH1"
-                android:textSize="30sp" />
+                android:textSize="@dimen/textSize" />
 
             <Button
                 android:id="@+id/btnSh2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/SH2"
-                android:textSize="30sp" />
+                android:textSize="@dimen/textSize" />
 
             <Button
                 android:id="@+id/btnSh3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/SH3"
-                android:textSize="30sp" />
+                android:textSize="@dimen/textSize" />
 
             <Button
                 android:id="@+id/btnSh4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/SH4"
-                android:textSize="30sp" />
+                android:textSize="@dimen/textSize" />
 
         </com.google.android.material.circularreveal.CircularRevealGridLayout>
 
