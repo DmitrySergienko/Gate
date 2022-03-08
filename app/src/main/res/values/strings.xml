@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Проезд в квартал</string>
+    <string name="SH1">Ш1</string>
+    <string name="SH2">Ш2</string>
+    <string name="SH3">Ш3</string>
+    <string name="SH4">Ш4</string>
+
+    <string name="text_size">35sp</string>
+    <string name="btn_width">20dp</string>
+    <string name="btn_height">50dp</string>
+    <string name="MainComment">ВЫБЕРИТЕ № ПРОЕЗДА</string>
+</resources>
