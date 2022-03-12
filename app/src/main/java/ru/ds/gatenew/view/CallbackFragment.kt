@@ -46,31 +46,21 @@ class CallbackFragment : Fragment(), View.OnClickListener {
         when (v?.id) {
             R.id.btnSh1 -> {
                 makeCall(Constant.SH1_NUMBER) // call to gate
-                closeApp() //close app
             }
 
             R.id.btnSh2 -> {
                 makeCall(Constant.SH2_NUMBER)
-                closeApp() //close app
             }
             R.id.btnSh3 -> {
                 makeCall(Constant.SH3_NUMBER)
-                closeApp() //close app
             }
             R.id.btnSh4 -> {
                 makeCall(Constant.SH4_NUMBER)
-                closeApp() //close app
             }
         }
     }
 
-    private fun closeApp() {
-        Thread {
-            sleep(3000)
-            this@CallbackFragment
-            exitProcess(0)
-        }.start()
-    }
+
 
     private fun makeCall(call_number: String) {
         val callIntent = Intent(Intent.ACTION_CALL)

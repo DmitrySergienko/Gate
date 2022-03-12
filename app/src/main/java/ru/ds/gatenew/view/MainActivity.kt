@@ -1,9 +1,11 @@
 package ru.ds.gatenew.view
 
+import android.app.Activity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import ru.ds.gatenew.R
 import ru.ds.gatenew.databinding.ActivityMainBinding
+import kotlin.system.exitProcess
 
 
 class MainActivity : AppCompatActivity() {
@@ -13,12 +15,26 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        if(savedInstanceState == null){
+        if (savedInstanceState == null) {
             supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.container, CallbackFragment.newInstance())
-                .commit()
+                    .beginTransaction()
+                    .replace(R.id.container, CallbackFragment.newInstance())
+                    .commit()
+            closeApp()
         }
+    }
+
+    private fun closeApp() {
+
+        Thread {
+            Thread.sleep(4000)
+            onDestroy()
+        }.start()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        this.finish()
     }
 
 }
