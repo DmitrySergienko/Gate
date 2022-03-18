@@ -28,13 +28,9 @@ class MainActivity : AppCompatActivity() {
 
         Thread {
             Thread.sleep(4000)
-            onDestroy()
+            finish()
         }.start()
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        this.finish()
-    }
 
 }
